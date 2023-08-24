@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  qashier:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - './src:/app/src'
+    container_name: carpark_availability
+    expose:
+      - '4000'
+    ports:
+      - '4000:4000'
+    # command: pnpm dev

@@ -1,0 +1,16 @@
+FROM node:18.17.1
+
+# use pnpm instead of yarn
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+WORKDIR /home/node/app
+
+# copy files to run install
+COPY . /home/node/app/
+RUN pnpm install
+RUN pnpm build
+CMD pnpm preview
+# COPY . /home/node/app/
+# CMD [ "pnpm", "preview:no-docker" ]

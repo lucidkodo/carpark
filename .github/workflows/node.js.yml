@@ -1,0 +1,23 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - deploy
+
+jobs:
+  deploy:
+    name: Pull & Update & Rebuild
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update repo & restart container
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: angie
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd carpark
+            git checkout deploy
+            git pull
+            pnpm stop
+            pnpm preview:docker
