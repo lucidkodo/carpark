@@ -14,11 +14,11 @@ const oneSecond: number = 1000; // one second
 
 export default function App() {
   const [carparkData, setCarparkData] = useState<Carpark[]>([]);
-  const [pollerTimerId, setPollerTimerId] = useState<number>(0);
+  const [, setPollerTimerId] = useState<number>(0);
 
   // count down in ms till next poll
   const [remainingMs, setRemainingMs] = useState<number>(0);
-  const [countDownTimerId, setCountDownTimerId] = useState<number>(0);
+  const [, setCountDownTimerId] = useState<number>(0);
 
   function initializePolling() {
     const timerId = setInterval(fetchData, pollDelayMs);
@@ -65,8 +65,6 @@ export default function App() {
    * 2. Initiate timer
    */
   useEffect(() => {
-    console.log('app mounted');
-
     fetchData();
     initializePolling();
   }, []);

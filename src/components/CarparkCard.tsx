@@ -7,7 +7,6 @@ import {
   StackDivider,
   Box,
   Text,
-  Link,
 } from '@chakra-ui/react';
 import { Carpark, CarparkSize } from '../data/types';
 

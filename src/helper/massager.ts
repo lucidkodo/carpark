@@ -68,6 +68,7 @@ export default function massageApiData(apiResponse: ApiResponse): Carpark[] {
   return Array.from(dataMap.values());
 }
 
+// compute aggregated lot counts
 function categorizeCarpark(carpark: Carpark): Carpark {
   carpark.aggregatedTotal = carpark.lotInfo.reduce((prev, curr) => {
     return prev + curr.totalLot;

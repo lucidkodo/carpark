@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, Text, SimpleGrid, Box, Link } from '@chakra-ui/react';
+import { Container, SimpleGrid, Link } from '@chakra-ui/react';
 import { Carpark, CarparkSize as Size } from '../data/types';
 import CarparkCard from './CarparkCard';
 import ViewAllModal from './Modal';
@@ -69,7 +69,6 @@ export default function Content(props: any) {
   }
 
   function openModal(size: Size) {
-    console.log(size);
     switch (size) {
       case Size.SMALL:
         setModalData(smallCarparks);
@@ -93,7 +92,6 @@ export default function Content(props: any) {
   }
 
   useEffect(() => {
-    console.log('content mount');
     filterAndSortCarpark();
   }, [carparks]);
 

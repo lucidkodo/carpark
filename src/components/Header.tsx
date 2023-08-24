@@ -5,7 +5,6 @@ import {
   Flex,
   Heading,
   HStack,
-  FormControl,
   FormLabel,
   Switch,
   useColorMode,

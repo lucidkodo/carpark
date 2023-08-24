@@ -1,5 +1,4 @@
 import {
-  useDisclosure,
   Button,
   Modal,
   ModalOverlay,
@@ -8,11 +7,8 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  List,
   ListItem,
-  ListIcon,
   OrderedList,
-  UnorderedList,
 } from '@chakra-ui/react';
 import { Carpark } from '../data/types';
 
