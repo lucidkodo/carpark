@@ -53,7 +53,7 @@ devDependencies:
     specifier: 0.4.3
     version: 0.4.3(eslint@8.45.0)
   sass:
-    specifier: ^1.66.1
+    specifier: 1.66.1
     version: 1.66.1
   typescript:
     specifier: 5.0.2
